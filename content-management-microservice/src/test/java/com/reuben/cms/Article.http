@@ -1,0 +1,18 @@
+### Send POST request with json body
+POST http://localhost:8080/article/create
+Content-Type: application/json
+
+{
+  "title": "System Design Uber Eats",
+  "content": "This is a Uber Eats article",
+  "categories":  ["Tech" ,"Uber" ],
+  "tags": ["Tech" ,"System Design" ],
+  "status": "draft"
+}
+
+
+
+
+### Send GET request with json body
+GET http://localhost:8080/article/get/142ff270-3b0d-4db2-a8e5-4d69f67fcb5b
+Accept: application/json

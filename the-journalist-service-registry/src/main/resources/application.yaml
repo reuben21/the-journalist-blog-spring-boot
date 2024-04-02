@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: the-journalist-service-registry
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+        register-with-eureka: false # Don't register with the Eureka server itself
+        fetch-registry: false # Don't fetch the registry from the Eureka server
+
+
+server:
+    port: 8761
+

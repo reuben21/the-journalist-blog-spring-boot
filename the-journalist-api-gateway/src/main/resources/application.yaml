@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: the-journalist-api-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+    instance:
+      hostname: api-gateway
+      lease-renewal-interval-in-seconds: 5 # The number of seconds between renewal of lease with Eureka server
+      lease-expiration-duration-in-seconds: 5 # The duration in seconds that the lease will remain in the registry without being renewed
+
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+      register-with-eureka: true # Register with the Eureka server
+      fetch-registry: true # Fetch the registry from the Eureka server
+
+#      healthcheck:
+#        enabled: true
+
+
+server:
+  port: 8080
