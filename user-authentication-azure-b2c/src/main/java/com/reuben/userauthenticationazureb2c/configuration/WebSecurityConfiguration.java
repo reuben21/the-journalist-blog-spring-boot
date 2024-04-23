@@ -21,6 +21,7 @@ public class WebSecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        // AadB2cOidcLoginConfigurer configurer is used to initialize the http object
         configurer.init(http);
         http
                 .csrf(AbstractHttpConfigurer::disable)
@@ -32,14 +33,5 @@ public class WebSecurityConfiguration {
         return http.build();
     }
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .apply(configurer)
-//        ;
-//    }
+
 }
